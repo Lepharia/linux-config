@@ -25,8 +25,10 @@ alias wtr='curl wttr.in/Dortmund?n'
 alias rm='rm -Iv --one-file-system'
 
 # Import of user functions
-source .bashsrc/*.sh
-
+if [ -d .bashsrc];
+then
+	source .bashsrc/*.sh
+fi
 #start tmux on start
 x="bla"
 if [ -z "${TMUX+x}" ]; then
