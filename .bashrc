@@ -29,7 +29,8 @@ if [ -d .bashsrc];
 then
 	source .bashsrc/*.sh
 fi
-#start tmux on start
+
+# Start tmux on start
 x="bla"
 if [ -z "${TMUX+x}" ]; then
 	tmux
