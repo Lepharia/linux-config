@@ -27,7 +27,10 @@ alias rm='rm -Iv --one-file-system'
 # Import of user functions
 if [ -d .bashsrc ];
 then
-	source .bashsrc/*.sh
+	for f in .bashsrc/*;
+	do
+		source $f
+	done
 fi
 
 # Start tmux on start
