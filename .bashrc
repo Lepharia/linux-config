@@ -34,3 +34,6 @@ fi
 if ! tmux info &> /dev/null; then
 	tmux
 fi
+
+# Show Git branch info in command prompt
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
