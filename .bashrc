@@ -27,8 +27,14 @@ alias rm='rm -Iv --one-file-system'
 # Import of user functions
 if [ -d .bashsrc ];
 then
-	source .bashsrc/*.sh
+	for f in .bashsrc/*;
+	do
+		source $f
+	done
 fi
 
 # Start tmux on start
 tmux a || tmux
+
+# Show Git branch info in command prompt
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
