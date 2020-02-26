@@ -31,6 +31,4 @@ then
 fi
 
 # Start tmux on start
-if ! tmux info &> /dev/null; then
-	tmux
-fi
+tmux a || tmux
