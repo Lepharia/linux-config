@@ -26,9 +26,9 @@ alias ls='ls -al'
 alias rm='rm -Iv --one-file-system'
 
 # Import of user functions
-if [ -d .bashsrc ];
+if [ -d ~/.bashsrc ];
 then
-	for f in .bashsrc/*;
+	for f in ~/.bashsrc/*;
 	do
 		source $f
 	done
