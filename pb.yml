@@ -6,7 +6,7 @@
 
   - name: symlink everything
     file:
-      path: "~/{{ item | basename }}"
+      path: "/home/{{ username }}/{{ item | basename }}"
       src: "{{ item }}"
       state: link
     with_fileglob: "files/.*"
@@ -19,7 +19,7 @@
   - name: download gotop
     unarchive:
       src: https://github.com/xxxserxxx/gotop/releases/download/v3.5.2/gotop_v3.5.2_linux_amd64.tgz
-      dest: gotop.rpm # required. Remote absolute path where the archive should be unpacked.
+      dest: gotop.rpm
         
   - name: install gotop
     yum:
