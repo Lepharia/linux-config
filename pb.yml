@@ -20,10 +20,10 @@
   - name: download gotop
     unarchive:
       src: https://github.com/xxxserxxx/gotop/releases/download/v3.5.2/gotop_v3.5.2_linux_amd64.tgz
-      dest: "/tmp/gotop.rpm"
+      dest: /tmp/
       remote_src: yes
         
   - name: install gotop
     yum:
-      name: gotop.rpm
+      name: /tmp/gotop
       state: installed
