@@ -9,6 +9,7 @@
       path: "/home/{{ username }}/{{ item | basename }}"
       src: "{{ item }}"
       state: link
+      force: yes
     with_fileglob: "files/.*"
 
   - name: install my favourite packages
