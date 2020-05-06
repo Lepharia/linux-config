@@ -20,17 +20,26 @@ alias fuck='sudo $(history -p \!\!)'
 alias python='python3'
 alias py='python3'
 alias wtr='curl wttr.in/Dortmund?n'
+alias ls='ls -al'
 
 # Since the accident... 
 alias rm='rm -Iv --one-file-system'
 
 # Import of user functions
-if [ -d .bashsrc ];
+if [ -d ~/.bashsrc ];
 then
-	source .bashsrc/*.sh
+	for f in ~/.bashsrc/*;
+	do
+		source $f
+	done
 fi
 
 # Start tmux on start
 if ! tmux info &> /dev/null; then
 	tmux
+elif [ -z $TMUX ]; then
+	tmux a
 fi
+
+# Show Git branch info in command prompt
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
