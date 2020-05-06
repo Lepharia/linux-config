@@ -6,10 +6,10 @@
 
   - name: symlink everything
     file:
-      path: "~/{{ item }}"
+      path: "~/{{ item | basename }}"
       src: "{{ item }}"
       state: link
-    with_fileglob: ".*"
+    with_fileglob: "files/.*"
 
   - name: install my favourite packages
     yum:
