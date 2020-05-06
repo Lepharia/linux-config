@@ -24,6 +24,7 @@
       remote_src: yes
         
   - name: install gotop
-    yum:
-      name: /tmp/gotop
-      state: present
+    copy:
+      src: /tmp/gotop
+      dest: /usr/local/bin/gotop
+      mode: 777
