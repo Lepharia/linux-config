@@ -1,0 +1,9 @@
+---
+yum_install_packages:
+  - vim
+  - tmux
+  - htop
+  - curl
+  - wget
+  - open-vm-tools
+  - python3

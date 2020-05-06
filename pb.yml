@@ -1,0 +1,27 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+
+  - name: symlink everything
+    file:
+      path: "~/{{ item }}"
+      src: "{{ item }}"
+      state: link
+    with_fileglob: ".*"
+
+  - name: install my favourite packages
+    yum:
+      name: "{{ yum_install_packages }}"
+      state: installed
+
+  - name: download gotop
+    unarchive:
+      src: https://github.com/xxxserxxx/gotop/releases/download/v3.5.2/gotop_v3.5.2_linux_amd64.tgz
+      dest: gotop.rpm # required. Remote absolute path where the archive should be unpacked.
+        
+  - name: install gotop
+    yum:
+      name: gotop.rpm
+      state: installed
