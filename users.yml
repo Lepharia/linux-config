@@ -1,0 +1,16 @@
+---
+- name: create user accounts
+  user:
+    name: "{{ item.username }}"
+    groups: "{{ item.groups }}"
+    state: present
+    create_home: yes
+  loop: "{{ users }}"
+
+- name: install SSH public keys
+  authorized_key:
+    name: "{{ item.username }}"
+    key: "{{ item.public_key }}"
+    manage_dir: yes
+    state: present
+  loop: "{{ users }}"

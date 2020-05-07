@@ -1,5 +1,10 @@
 ---
-username: dbonnman
+install_gotop: true
+my_user: dbonnman
+users:
+  - name: dbonnman
+    groups: wheel
+    public_key: ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAgEAkscrUQhWVIfW0wm+pUla8RbBfUc3UAasGFrokwXrtQ7YousEDF+UB+3To8jiMOmfaTH20gmNTbyId2UfPBzeaEONBIZZGDrKZb0kZfCWjAC03hk845ZKYLpOL1uZPQa2d2O5FByQvIDImCjhxvAoZvev9G/4NMF1OqBHPz+lxNEycrSS9TRkgI3nRpuHaERt0NgS7d9Um5W0GZvEmCab3TjHsIz5dSJQw1KIZbEt85nX0vgkwqLqVsAflXObzt8cQhNkdXAyHFRdMptqERVhlHRDTFApiIJW+3FYdPYjEzQwtNzxEZeN0QdEPT9Q/LtcONe2+QeKlFQ7RFCFKjIVGn7wJfZKb+stYOOPOuCSDIQgKwGI4dIiIrgDh8EcTV+DIagfg6dTS9VeWIY5r+oa/n/WyzlEaa7LYTmuoRK1K03pabeThDKrXLwbt9tBX/QSa+UxJLNsBDyoxwVhijEE8Rm/mBFdc3CJ3Kc8vbgd7AJtucE0YWvvZF+luiPg6k7MQLqaKptQ6n7+1+aPy1Bh9lci2kNkwk3VEO4hWPYMsMH5toc/hHISBkrmZ2EXn2wHpxuHE1c2KyOredjspUTFTPK/z9ecfIb1Qu0b50vG7t1syrApDShZrrlBftLdAgBJPJR3MetbZ4lPWm2vp4NSidp29KKNA803P5V12KIqP4E= dbonnman
 yum_install_packages:
   - vim
   - tmux
