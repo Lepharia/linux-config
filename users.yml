@@ -9,7 +9,7 @@
 
 - name: install SSH public keys
   authorized_key:
-    name: "{{ item.username }}"
+    user: "{{ item.username }}"
     key: "{{ item.public_key }}"
     manage_dir: yes
     state: present
