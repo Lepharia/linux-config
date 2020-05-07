@@ -25,11 +25,11 @@
       src: https://github.com/xxxserxxx/gotop/releases/download/v3.5.2/gotop_v3.5.2_linux_amd64.tgz
       dest: /tmp/
       remote_src: yes
-    when: "{{ install_gotop | bool }}"
+    when: install_gotop | bool 
         
   - name: install gotop
     copy:
       src: /tmp/gotop
       dest: /usr/local/bin/gotop
       mode: 777
-    when: "{{ install_gotop | bool }}"
+    when: install_gotop | bool 
