@@ -7,13 +7,20 @@
   - name: manage user accounts
     import_tasks: users.yml
 
-  - name: symlink everything
+  - name: symlink config files
     file:
       path: "/home/{{ my_user }}/{{ item | basename }}"
       src: "{{ item }}"
       state: link
       force: yes
     with_fileglob: "files/.*"
+
+  - name: symlink bash scripts folder
+    file:
+      path: "/home/{{ my_user}}/.bashsrc"
+      src: files/.bashsrc
+      state: link
+      force: yes
 
   - name: install my favourite packages
     yum:
