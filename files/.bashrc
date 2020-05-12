@@ -36,10 +36,9 @@ fi
 
 # Start tmux on start
 if ! tmux info &> /dev/null; then
-	tmux
-elif [ -z $TMUX ]; then
-	tmux a
+    test -z $TMUX && tmux attach | tmux new
 fi
+
 
 # Show Git branch info in command prompt
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
