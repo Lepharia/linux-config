@@ -36,7 +36,7 @@ fi
 
 # Start tmux on start
 if ! tmux info &> /dev/null; then
-    test -z $TMUX && tmux attach | tmux new
+    test -z $TMUX && tmux attach || tmux new
 fi
 
 
