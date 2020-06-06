@@ -25,7 +25,7 @@
   - name: install my favourite packages
     yum:
       name: "{{ yum_install_packages }}"
-      state: present
+      state: latest
 
   - name: download gotop
     unarchive:
